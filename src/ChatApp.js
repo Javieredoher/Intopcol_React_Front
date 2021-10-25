@@ -1,10 +1,18 @@
-import React from 'react'
-import { AppRouter } from './router/AppRouter'
+import React from 'react';
+import { AuthProvider } from './auth/AuthContext';
+import { SocketProvider } from './context/SocketContext';
+import { AppRouter } from './router/AppRouter';
 
 export const ChatApp = () => {
     return (
-        <div>
-            <AppRouter/>
-        </div>
+        <AuthProvider>
+
+            <SocketProvider>
+
+                <AppRouter />
+                
+            </SocketProvider>
+
+        </AuthProvider>
     )
 }
