@@ -1,11 +1,25 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { ChatContext } from '../context/chat/ChatContext'
+import { types } from '../types/types'
 
 export const SidebarChatItem = ({user}) => {
 
-    console.log(user)
+    const {chatState, dispatch} = useContext(ChatContext);
+    const {chatActivo} = chatState;
+
+    const onClick = () => {
+
+        dispatch({
+            type:types.activarChat,
+            payload: user.uid
+        })
+    }
     return (
           
-            <div className="chat_list ">
+            <div 
+                className={`chat_list ${(user.uid ===chatActivo) && 'active_chat'}`}
+                onClick={onClick}
+            >
                 {/* Active Chat */}
 
                 <div className="chat_people">
