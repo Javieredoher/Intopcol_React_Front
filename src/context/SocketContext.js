@@ -4,6 +4,7 @@ import { AuthContext } from '../auth/AuthContext';
 import { ChatContext } from './chat/ChatContext';
 import { useSocket } from '../hooks/useSocket'
 import { types } from '../types/types';
+import { scrollToBottonAnimated } from '../helpers/scrollToBotton';
 
 export const SocketContext = createContext();
 
@@ -37,6 +38,17 @@ export const SocketProvider = ({ children }) => {
         })
     }, [ socket, dispatch ]);
 
+    useEffect(() => {
+        socket?.on('personal-message', (message) => {
+            dispatch({
+                type: types.newMessage,
+                payload: message
+            })
+            
+            scrollToBottonAnimated('messages');
+
+        })
+    }, [socket, dispatch]);
 
     return (
         <SocketContext.Provider value={{ socket, online }}>
