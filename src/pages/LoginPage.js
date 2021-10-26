@@ -9,8 +9,8 @@ export const LoginPage = () => {
     const { login } = useContext( AuthContext );
     
     const [ form, setForm ] = useState({
-        email: 'test1@test.com', // Delete to production
-        password: '123456',
+        email: '', // Delete to production
+        password: '',
         rememberme: false
     });
 

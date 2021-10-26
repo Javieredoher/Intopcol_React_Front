@@ -9,11 +9,11 @@ export const RegisterPage = () => {
     const { register } = useContext( AuthContext );
     
     const [ form, setForm ] = useState({
-        email: 'test6@test.com',
-        password: '123456',
-        name: 'Susana Paz',
-        username:"testingSusana",
-        position:"Admin"
+        email: '',
+        password: '',
+        name: '',
+        username:"",
+        position:""
 
     });
 
