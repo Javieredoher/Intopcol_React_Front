@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
     const login = async( email, password ) => {
 
         const resp = await fetchSinToken('login', { email, password }, 'POST');
+        console.log(resp)
 
         if ( resp.ok ) {
             localStorage.setItem('token', resp.token );
