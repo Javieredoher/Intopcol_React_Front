@@ -9,6 +9,9 @@ moment.locale('es');
 
 
 export const ChatApp = () => {
+
+    console.log("Update1")
+    
     return (
         <ChatProvider>
             <AuthProvider>
