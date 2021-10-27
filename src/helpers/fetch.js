@@ -1,4 +1,6 @@
 const baseUrl = "https://chatintopcol.herokuapp.com/api";
+//const baseUrl = process.env.REACT_APP_API_URL;
+
 
 //Rename functions to English before send to production
 

@@ -7,7 +7,7 @@ import './index.css';
 ReactDOM.render(
   
     <ChatApp />,
- 
+     
   document.getElementById('root')
 );
 
